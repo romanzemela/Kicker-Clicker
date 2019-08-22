@@ -27,11 +27,14 @@ namespace WPF_App
             InitializeComponent();
             models.SendData(controller, view);
             SendViewData(view);
+            controller.UploadSavedData();
         }
         // Main Click Button
         private void ClickButton_Click(object sender, RoutedEventArgs e)
         {
+            Random rnd = new Random();
             controller.ClickButton();
+            ClickPointAddLabel.Margin = new Thickness(rnd.Next(0, 150), rnd.Next(0, 150), rnd.Next(0, 150), rnd.Next(0, 150));
         }
         private void ClickPointAddLabel_Click(object sender, RoutedEventArgs e)
         {
